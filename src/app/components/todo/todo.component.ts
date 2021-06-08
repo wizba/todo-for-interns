@@ -13,8 +13,6 @@ export class TodoComponent implements OnInit {
 
 		//input 
 		todoInput:string;
-		
-	
 		// Mock Data
 		todoList: any [] = [
 			{
@@ -53,13 +51,14 @@ export class TodoComponent implements OnInit {
 				complete: false
 			}
 		]
-	
+	// showModal used to show and hide modal
+	showModal : boolean =false;
+
 	constructor() { }
 	
 	ngOnInit(): void {}
 
 	submit():void {
-
 		let listItem:any ={
 			id: id().slice(0, 3),
 			title: this.todoInput,
@@ -87,5 +86,11 @@ export class TodoComponent implements OnInit {
 		console.log(todo);
 	}
 
-	
+	show(){
+		this.showModal =!this.showModal; 
+	}
+
+	hide(){
+	  this.showModal = false;
+	}
 }

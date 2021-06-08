@@ -38,7 +38,7 @@
 							</td>
 							<td>{{todo.title}}</td>
 							<td class="d-flex justify-content-between">
-								<a  class="btn btn-sm btn-warning" title="Edit" >
+								<a  class="btn btn-sm btn-warning" title="Edit" (click)="show()">
 									
 
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -60,3 +60,19 @@
 		</div>
 	</div>
 </div>
+
+
+ <!-- The Modal -->
+ <div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Update </h3>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<button type="button" class="btn btn-danger" data-dismiss="modal" (click)="hide()">Close</button>
+		</div>
+	</div>
+ </div>
